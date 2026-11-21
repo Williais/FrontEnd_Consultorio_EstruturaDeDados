@@ -1,7 +1,34 @@
-*{
-    font-family: "Poppins", "sans-senrif";
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    background-color: #f9f9f9;
+body {
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.barra-metricas {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.container-tabela {
+  width: 100%;
+  max-width: 1120px;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container-tabela {
+    padding: 0 16px;
+  }
 }

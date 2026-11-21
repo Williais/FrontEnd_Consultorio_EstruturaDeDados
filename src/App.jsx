@@ -68,19 +68,22 @@ const filaComum = [
      </div>
 
 
-      <Tabela
-        tipo="preferencial"
-        pacientes={filaPreferencial}
-        onVerPaciente={(paciente) => console.log('Abrir ficha:', paciente)} // lembrar de trocar
-        onRemoverFila={(cpf) => console.log('Remover CPF:', cpf)} // lembrar de trocar
-      />
+      <div className='container-tabela'>
 
-      <Tabela
-        tipo="comum"
-        pacientes={filaComum}
-        onVerPaciente={(paciente) => console.log('Abrir ficha:', paciente)} // lembrar de trocar
-        onRemoverFila={(cpf) => console.log('Remover CPF:', cpf)} // lembrar de trocar
-      />
+        <Tabela
+          tipo="preferencial"
+          pacientes={filaPreferencial}
+          onVerPaciente={(paciente) => console.log('Abrir ficha:', paciente)} // lembrar de trocar
+          onRemoverFila={(cpf) => console.log('Remover CPF:', cpf)} // lembrar de trocar
+        />
+
+        <Tabela
+          tipo="comum"
+          pacientes={filaComum}
+          onVerPaciente={(paciente) => console.log('Abrir ficha:', paciente)} // lembrar de trocar
+          onRemoverFila={(cpf) => console.log('Remover CPF:', cpf)} // lembrar de trocar
+        />
+      </div>
 
     </>
   )

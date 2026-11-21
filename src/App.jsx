@@ -2,9 +2,18 @@ import { useState } from 'react'
 import {Header} from './components/Header/Header'
 import {Card} from './components/Card/Card'
 import { Tabela } from './components/Tabela/Tabela'
+import { ModalCadastro } from './components/ModalCadastro/ModalCadastro'
 import './App.css'
 
 function App() {
+
+  const [modalCadastroAberto, setModalCadastroAberto] = useState(false)
+
+  function handleSalvarPaciente(dadosPaciente) {
+    console.log('Paciente cadastrado:', dadosPaciente)
+    setModalCadastroAberto(false)
+  }
+
   const filaPreferencial = [
   {
     cpf: '123.456.789-01',
@@ -41,7 +50,14 @@ const filaComum = [
 
   return (
     <>
-     <Header/>
+     <Header onNovoPaciente={() => setModalCadastroAberto(true)} onAdicionarFila={() => {}}/>
+
+      {modalCadastroAberto && (
+        <ModalCadastro
+          onFechar={() => setModalCadastroAberto(false)}
+          onSalvar={handleSalvarPaciente}
+        />
+      )}
 
      <div className="barra-metricas">
         <Card titulo="Total aguardando" contagem={6} />
